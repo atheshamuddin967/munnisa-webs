@@ -13,7 +13,7 @@ function Footer() {
       <div className="footers">
         <div className="container">
           <div className="row">
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               {language === "en" && (
                 <div className="footerlist">
                   <h6>START A PROJECT</h6>
@@ -29,7 +29,7 @@ function Footer() {
                 </div>
               )}
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               <div className="footerlist">
                 {language == "en" && <h6>SAY HELLO</h6>}
                 {language == "hindi" && <h6>नमस्ते कहें</h6>}
@@ -57,7 +57,7 @@ function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="col-sm-3">
+            <div className="col-sm-4">
               {language === "en" && (
                 <div className="footerlist">
                   <h6>Jobs</h6>
@@ -75,8 +75,6 @@ function Footer() {
                   </p>
                 </div>
               )}{" "}
-            </div>
-            <div className="col-sm-3">
               <div className="socialicon">
                 <div className="footerlist">
                   {language == "en" && <h6>Social links</h6>}

@@ -10,7 +10,7 @@ function Hero() {
       <img src={Images.Carecenter} alt="hero" />
       <div className="main-details">
         {language === "en" && (
-          <div>
+          <div className="overflow">
             <h3 data-aos="fade-right">
               Find Our Best Services Provided by our specialsits.
             </h3>
@@ -18,7 +18,7 @@ function Hero() {
           </div>
         )}
         {language === "hindi" && (
-          <div>
+          <div className="overflow">
             <h3 data-aos="fade-right">
               हमारे विशेष संस्थानों द्वारा प्रदान की जाने वाली हमारी सर्वोत्तम
               सेवाएँ ढूँढ़ें।

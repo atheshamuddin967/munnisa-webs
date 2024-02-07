@@ -10,7 +10,7 @@ function Navbar() {
     // Check if the activePath is the same as the provided path or it's an empty string (defaulting to "/Home")
     return activePath === path;
   };
-  const { setLanguage } = useLanguage();
+  const { setLanguage, language } = useLanguage();
   const handleLanguageChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
@@ -36,29 +36,56 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/Home") ? "active" : ""}`}
-                  to="/Home"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
-                  to="/Hire"
-                >
-                  Hire us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Create a service
-                </Link>
-              </li>
-            </ul>
+            {language === "en" && (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    to="/Home"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                    to="/Hire"
+                  >
+                    Hire us
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    Create a service
+                  </Link>
+                </li>
+              </ul>
+            )}
+            {language === "hindi" && (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    to="/Home"
+                  >
+                    घर
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                    to="/Hire"
+                  >
+                    हमें भर्ती करें
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    सेवा बनाएं
+                  </Link>
+                </li>
+              </ul>
+            )}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <select name="" id="" onChange={handleLanguageChange}>
@@ -67,9 +94,16 @@ function Navbar() {
                 </select>
               </li>
               <li className="nav-item">
-                <Link to="/Signin" className="singup">
-                  SignUp
-                </Link>
+                {language === "en" && (
+                  <Link to="/Signin" className="singup">
+                    SignUp
+                  </Link>
+                )}
+                {language === "hindi" && (
+                  <Link to="/Signin" className="singup">
+                    साइन अप
+                  </Link>
+                )}
               </li>
             </ul>
           </div>

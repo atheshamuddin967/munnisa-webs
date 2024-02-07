@@ -7,7 +7,7 @@ import Services from "./Services";
 
 function Home() {
   return (
-    <div>
+    <div className="">
       <Hero />
       <Feature />
       <Philosphy />
