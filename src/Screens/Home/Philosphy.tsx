@@ -5,7 +5,7 @@ function Philosphy() {
       <div className="container">
         <div className="row  rows">
           <div className="col-sm-6">
-            <div className="Philosphy-details">
+            <div data-aos="fade-right" className="Philosphy-details">
               <div className="headings">
                 <h2>Our Philosophy of care.</h2>
               </div>
@@ -42,7 +42,7 @@ function Philosphy() {
               </h5>
             </div>
           </div>
-          <div className="col-sm-6">
+          <div data-aos="fade-left" className="col-sm-6" >
             <img src={Images.games} alt="game" />
           </div>
         </div>

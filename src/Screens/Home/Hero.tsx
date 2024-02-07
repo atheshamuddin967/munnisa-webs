@@ -5,8 +5,8 @@ function Hero() {
   return (
     <div className="main">
       <img src={Images.Carecenter} alt="hero" />
-      <div className="main-details">
-        <h3>Find Our Best Services Provided by our specialsits.</h3>
+      <div  className="main-details">
+        <h3 data-aos="fade-right">Find Our Best Services Provided by our specialsits.</h3>
         <h5>Download our mobile app</h5>
         <ul>
           <li>

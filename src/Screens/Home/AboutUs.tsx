@@ -9,11 +9,11 @@ function AboutUs() {
         </div>
 
         <div className="row   rows">
-          <div className="col-sm-6">
+          <div data-aos="fade-right" className="col-sm-6">
             <img src={Images.About} alt="game" />
           </div>
           <div className="col-sm-6">
-            <div className="Philosphy-details">
+            <div data-aos="fade-left" className="Philosphy-details">
               <div className="headings">
                 <h3>Our Team</h3>
               </div>

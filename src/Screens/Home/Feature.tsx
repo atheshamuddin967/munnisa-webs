@@ -42,11 +42,12 @@ function Feature() {
   };
 
   return (
-    <div className="container">
+    <div className="container" >
       <div className="row space">
         <div className="headings">
           <h2>Our Featured Services!</h2>
         </div>
+    <div className="MySlider ">
 
         <Slider {...settings}>
           {Data.map((item) => (
@@ -58,6 +59,7 @@ function Feature() {
             </div>
           ))}
         </Slider>
+          </div>
       </div>
     </div>
   );

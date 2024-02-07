@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ServiceData } from "../../Data/ServicesData";
+import AOS from "aos";
 
 function Services() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: false, // Whether animation should only happen once while scrolling down
+    });
+  }, []);
   return (
     <div className="services">
       <div className="container">
@@ -10,8 +18,8 @@ function Services() {
         </div>
         <div className="row ">
           {ServiceData.map((item: any) => (
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="servicedetails">
+            <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
+              <div  className="servicedetails">
                 <div className="iconBox">
                   {React.createElement(item.images, { size: 30 })}
                 </div>
