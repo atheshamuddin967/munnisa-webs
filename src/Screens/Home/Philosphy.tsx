@@ -1,4 +1,4 @@
-import Images from "../images/Images";
+import Images from "../../images/Images";
 function Philosphy() {
   return (
     <div className="philosphy">

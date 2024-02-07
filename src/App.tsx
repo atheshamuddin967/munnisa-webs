@@ -1,7 +1,11 @@
 import "../src/Styles/Global.scss";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home/Home";
+import Home from "./Screens/Home/Home";
 import Navbar from "./Component/Navbar";
+import Footer from "./Component/Footer";
+import Hireus from "./Screens/Hire/Hireus";
+import SignIn from "./Screens/Login/SignIn";
+import SignUp from "./Screens/Login/SignUp";
 
 function App() {
   return (
@@ -11,8 +15,14 @@ function App() {
       </div>
       <Routes>
         <Route path={"/"} element={<Home />} />
-        <Route path={"Home"} element={<Home />} />
+
+        <Route path={"/Home"} element={<Home />} />
+        <Route path={"/Hire"} element={<Hireus />} />
+        <Route path={"/Signin"} element={<SignIn />} />
+        <Route path={"/Signup"} element={<SignUp />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

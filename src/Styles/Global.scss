@@ -260,10 +260,11 @@ transition: all ease-in-out 0.3s;
   }
   .singup{
     background-color: $blue;
- padding: 5px 20px;
+ padding: 8px 20px;
     border: 0;
     border-radius: 10px;
     color: white    ;
+    text-decoration: none;
 
   }
   .contact{
@@ -326,21 +327,164 @@ transition: all ease-in-out 0.3s;
             border-radius: 10px;
         }
         label{color: white;}
+        select{
+            width: 100%;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+    }}
+
+    .inpbox2{
+        button{
+            width: unset !important;
+        }
+        label{color: white;}
     }
-//   .shad{
-//         background-color: rgba(0, 0, 0, 0.5);
-//         z-index: 101;
-//         width: 100%;
-//         height: 100%;
-//         border-radius: 10px;
-//         top: 0;
-//         left: 0;
-//         position: absolute;
-//         }
-    }
+.footers{
+padding: 30px 0;
+background-color: $blue;
+color: white;
+}
    
   
 
     :focus-visible {
         outline: -webkit-focus-ring-color auto 0px !important;
+    }
+  
+    .footerlist{
+h6{
+    font-weight: 500;
+    font-family: $poppins;
+    font-size: 20px;
+}
+
+ul{ 
+margin: 0 0;
+padding: 0 0;}
+li{
+    font-family: $mont;
+    list-style: none;
+    a{
+        text-decoration: none;
+        color: unset;
+    }
+}
+    }
+    .socialicon{
+        text-align: center;
+        ul{
+            padding: 0 0;
+            li{
+                list-style: none;
+                display: inline-table;
+                margin: 0 5px;
+                font-size: 20px;
+                a{
+                    color: unset;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .copy{
+        background-color: #a8bbbf;
+        text-align: center;
+        font-size: 12px;
+    }
+
+
+
+    // home section end 
+     
+    // hire us section start 
+
+    .hireus{
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .hireHeadings{
+        text-align: center;
+        margin-top: 20px;
+        h4{
+            color: $blue;
+        }
+        h6{
+            color: #646262;
+        }
+    }
+ 
+    .react-datepicker-wrapper {
+        display: inline-block;
+        padding: 5px !important;
+        border: 0;
+        width: 100% !important;
+        background: white;
+        border-radius: 10px;
+input{
+    width: 100% !important;
+    border: 0 !important;
+}
+    }
+    .login{
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        // z-index: 1001;
+    }
+    .logininpt{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 10px;
+        border-radius: 10px;
+        max-width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        img{
+            max-height: 50px;
+            
+        }
+    }
+    .inpbox3{
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+align-items: center;
+padding: 0 10px;
+        input{
+            width: 100%;
+            border-radius: 10px;
+            padding: 5px 10px;
+            border: 0;
+        }
+    }
+    .singBtn{
+        margin: 10px 0;
+        button{
+            background-color: $blue;
+            width: 100%;
+            border: 0;
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: white;
+        }
+    }
+    .forget{
+        margin: 5px 0 !important;
+        float: right !important;
+       color: $blue;
+       font-size: 12px;
+       font-weight: 600;
+       a{
+        color: unset !important;
+        text-decoration: none;
+       }
     }

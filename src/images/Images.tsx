@@ -15,6 +15,7 @@ import shopping from "./shopping.jpg";
 import repsit from "./repsit.jpg";
 import games from "./games.jpg";
 import About from "./about.jpg";
+import Login from "./login.png";
 
 const Images: any = {
   Logo,
@@ -34,5 +35,6 @@ const Images: any = {
   repsit,
   games,
   About,
+  Login,
 };
 export default Images;

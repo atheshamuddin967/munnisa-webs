@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Data } from "../Data/DummyData";
+import { Data } from "../../Data/DummyData";
 function Feature() {
   var settings = {
     dots: true,

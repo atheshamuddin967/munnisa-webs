@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Logo from "../../src/images/Logo.png";
 function Navbar() {
+  const location = useLocation();
+  const isActive = (path: string) => {
+    // If the current pathname is not available, default to "/Home"
+    const activePath = location.pathname || "/Home";
+
+    // Check if the activePath is the same as the provided path or it's an empty string (defaulting to "/Home")
+    return activePath === path;
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg sticky-top">
@@ -24,15 +32,17 @@ function Navbar() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
               <li className="nav-item">
                 <Link
-                  className="nav-link active"
-                  aria-current="page"
+                  className={`nav-link ${isActive("/Home") ? "active" : ""}`}
                   to="/Home"
                 >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link
+                  className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                  to="/Hire"
+                >
                   Hire us
                 </Link>
               </li>
@@ -44,7 +54,9 @@ function Navbar() {
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <button className="singup">SignUp</button>
+                <Link to="/Signin" className="singup">
+                  SignUp
+                </Link>
               </li>
             </ul>
           </div>
