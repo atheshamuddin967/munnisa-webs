@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import { useLanguage } from "../context/LanguageContext";
 import Logo from "../../src/images/Logo.png";
 function Navbar() {
   const location = useLocation();
@@ -9,6 +9,13 @@ function Navbar() {
 
     // Check if the activePath is the same as the provided path or it's an empty string (defaulting to "/Home")
     return activePath === path;
+  };
+  const { setLanguage } = useLanguage();
+  const handleLanguageChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
   };
   return (
     <div>
@@ -53,6 +60,12 @@ function Navbar() {
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <select name="" id="" onChange={handleLanguageChange}>
+                  <option value="en">en</option>
+                  <option value="hindi">हिंदी</option>
+                </select>
+              </li>
               <li className="nav-item">
                 <Link to="/Signin" className="singup">
                   SignUp
