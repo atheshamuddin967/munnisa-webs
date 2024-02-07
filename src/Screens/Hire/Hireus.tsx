@@ -4,18 +4,33 @@ import { Data2 } from "../../Data/DummyData";
 import DatePicker from "react-datepicker";
 import { useLanguage } from "../../context/LanguageContext";
 import "react-datepicker/dist/react-datepicker.css";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
 
 function Hireus() {
   const { language } = useLanguage();
   const [startDate, setStartDate] = useState(new Date());
+  const [hireUsData, setHireUsData] = useState({
+    name: "",
+    email: "",
+    title: "",
+    serviceType: "",
+    date: "",
+    budget: "",
+    description: "",
+  });
 
-  function handleDateChange(date: Date | null): void {
-    if (date) {
-      // Handle the selected date as needed
-      console.log("Selected date:", date);
-      setStartDate(date);
-    }
-  }
+  const validationSchema = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    title: Yup.string().required("Title is required"),
+    serviceType: Yup.string().required("Service type is required"),
+    budget: Yup.string().required("Budget is required"),
+    description: Yup.string().required("Description is required"),
+  });
 
   return (
     <div className="hireus">
@@ -38,90 +53,143 @@ function Hireus() {
           </div>
         </div>
 
-        <div className="formsLayout">
-          <div className="shad"></div>
-          <div className="formdata">
-            <div className="inpbox">
-              {" "}
-              {language == "en" && <label htmlFor="name">Name</label>}
-              {language == "hindi" && <label htmlFor="name">नाम</label>}
-              <input type="text" id="name" name="name" />
-            </div>
-            <div className="inpbox">
-              {language == "en" && <label htmlFor="email">Email</label>}
-              {language == "hindi" && <label htmlFor="email">ईमेल</label>}
-              <input type="text" id="email" name="Email" />
-            </div>
-            <div className="inpbox">
-              {language == "en" && <label htmlFor="title">Title</label>}
-              {language == "hindi" && <label htmlFor="title">शीर्षक</label>}
-              <input type="text" id="title" name="title" />
-            </div>
-            <div className="inpbox">
-              {language == "en" && <label htmlFor="title"> Service type</label>}
-              {language == "hindi" && (
-                <label htmlFor="title"> सेवा का प्रकार</label>
-              )}
-              {language == "en" && (
-                <select name="" id="">
-                  <option value="select type" disabled selected>
+        <Formik
+          initialValues={hireUsData}
+          validationSchema={validationSchema}
+          onSubmit={(values, { resetForm }) => {
+            if (!values) {
+              toast.error("Please fill in the form");
+              return;
+            }
+
+            toast.success("Form submitted successfully");
+            setHireUsData(values);
+            console.log(hireUsData);
+
+            // Clear form fields after submission
+            resetForm();
+          }}
+        >
+          <Form className="formsLayout">
+            <div className="shad"></div>
+            <div className="formdata">
+              <div className="inpbox">
+                {language == "en" && <label htmlFor="name">Name</label>}
+                {language == "hindi" && <label htmlFor="name">नाम</label>}
+                <Field type="text" id="name" name="name" />
+                <ErrorMessage name="name" component="div" className="error  " />
+              </div>
+              <div className="inpbox">
+                {language == "en" && <label htmlFor="email">Email</label>}
+                {language == "hindi" && <label htmlFor="email">ईमेल</label>}
+                <Field type="text" id="email" name="email" />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="error  "
+                />
+              </div>
+              <div className="inpbox">
+                {language == "en" && <label htmlFor="title">Title</label>}
+                {language == "hindi" && <label htmlFor="title">शीर्षक</label>}
+                <Field type="text" id="title" name="title" />
+                <ErrorMessage
+                  name="title"
+                  component="div"
+                  className="error  "
+                />
+              </div>
+              <div className="inpbox">
+                {language == "en" && (
+                  <label htmlFor="serviceType">Service type</label>
+                )}
+                {language == "hindi" && (
+                  <label htmlFor="serviceType">सेवा का प्रकार</label>
+                )}
+                <Field as="select" id="serviceType" name="serviceType">
+                  <option value="" disabled selected>
                     Select type
                   </option>
-                  {Data.map((item: any) => (
-                    <option value={item.tite}>{item?.title}</option>
-                  ))}
-                </select>
-              )}
-              {language == "hindi" && (
-                <select name="" id="">
-                  <option value="select type" disabled selected>
-                    प्रकार चुनें
-                  </option>
-                  {Data2.map((item: any) => (
-                    <option value={item.tite}>{item?.title}</option>
-                  ))}
-                </select>
-              )}
-            </div>
-            <div className="inpbox2">
-              {language == "en" && <label htmlFor="">Select date</label>}
-              {language == "hindi" && <label htmlFor="">तारीख़ चयन करें</label>}
-              <DatePicker
-                selected={startDate}
-                onChange={(date: Date | null) => handleDateChange(date)}
-                showTimeSelect
-                dateFormat="Pp"
-                className="calen"
-                wrapperClassName="datepicker-wrapper"
-              />
-            </div>
-            <div className="inpbox">
-              {language == "en" && <label htmlFor="budget">Budget</label>}
-              {language == "hindi" && <label htmlFor="budget">बजट</label>}
-              <input type="text" id="budget" name="budget" />
-            </div>
-            <div className="inpbox">
+                  {language === "en" &&
+                    Data.map((item) => (
+                      <option key={item.title} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
+                  {language === "hindi" &&
+                    Data2.map((item) => (
+                      <option key={item.title} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
+                </Field>
+                <ErrorMessage
+                  name="serviceType"
+                  component="div"
+                  className="error  "
+                />
+              </div>
+              <div className="inpbox2">
+                {language == "en" && <label htmlFor="date">Select date</label>}
+                {language == "hindi" && (
+                  <label htmlFor="date">तारीख़ चयन करें</label>
+                )}
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date || new Date())}
+                  showTimeSelect
+                  dateFormat="Pp"
+                  className="calen"
+                  wrapperClassName="datepicker-wrapper"
+                  id="date"
+                  name="date"
+                />
+                <ErrorMessage name="date" component="div" className="error  " />
+              </div>
+              <div className="inpbox">
+                {language == "en" && <label htmlFor="budget">Budget</label>}
+                {language == "hindi" && <label htmlFor="budget">बजट</label>}
+                <Field type="text" id="budget" name="budget" />
+                <ErrorMessage
+                  name="budget"
+                  component="div"
+                  className="error  "
+                />
+              </div>
+              <div className="inpbox">
+                {language == "en" && (
+                  <label htmlFor="description">Description</label>
+                )}
+                {language == "hindi" && (
+                  <label htmlFor="description">विवरण</label>
+                )}
+                <Field
+                  as="textarea"
+                  rows={5}
+                  id="description"
+                  name="description"
+                />
+                <ErrorMessage
+                  name="description"
+                  component="div"
+                  className="error  "
+                />
+              </div>
               {language == "en" && (
-                <label htmlFor="description">Description</label>
+                <div className="inpbox">
+                  <button type="submit">Submit</button>
+                </div>
               )}
               {language == "hindi" && (
-                <label htmlFor="description">विवरण</label>
+                <div className="inpbox">
+                  <button type="submit">प्रस्तुत करें</button>
+                </div>
               )}
-              <textarea rows={5} id="description" name="description" />
             </div>
-            {language == "en" && (
-              <div className="inpbox">
-                <button>Submit</button>
-              </div>
-            )}
-            {language == "hindi" && (
-              <div className="inpbox">
-                <button>प्रस्तुत करें</button>
-              </div>
-            )}{" "}
-          </div>
-        </div>
+          </Form>
+        </Formik>
       </div>
+      <ToastContainer />
     </div>
   );
 }
