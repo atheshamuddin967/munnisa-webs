@@ -47,6 +47,86 @@ function Philosphy() {
                 </h5>
               </div>
             )}
+
+            {language === "bengali" && (
+              <div data-aos="fade-right" className="Philosphy-details">
+                <div className="headings">
+                  <h2>আমাদের যত্নের দৃষ্টিভঙ্গি।</h2>
+                </div>
+                <p>
+                  Munissa Kare-র লক্ষ্য হলো তাদের নিজেদের বাসায় নির্ভরশীল
+                  সার্ভিস প্রদান করতে, ব্যক্তিগত যত্ন এবং সম্পর্কিত গৃহসেবা
+                  সরবরাহ করতে, যাতে সেবা ব্যবহারকারীর প্রয়োজনীয়তা পূরণ হতে
+                  পারে। Munissa Kare-র সমর্থিত সমস্ত ব্যক্তিগুলি, যারা একটি
+                  কর্মচারী হিসেবে কাজ করে, তারা সবসময়ই যত্ন প্রদান করে, যাতে
+                  আমরা যাদেরকে সমর্থন করি তাদের সম্পূর্ণ স্বাস্থ্য এবং ভালবাসার
+                  সর্বোচ্চ অবস্থা অর্জন করতে পারে। সমস্ত সেবা ব্যবহারকারীর
+                  ক্ষেত্রে ব্যক্তিগত চয়ন এবং ব্যক্তিগত সিদ্ধান্ত নিতে সমস্ত
+                  ব্যক্তিগত সমর্থন করা হবে এবং Munissa Kare এর জন্য কাজ করে যারা
+                  সবচেয়ে বড় বৈশিষ্ট্য এবং উৎসাহী হয়। সেবা ব্যবহারকারীদের জন্য
+                  স্বাধীনতা হবে আদর্শ এবং এটি সমর্থন করা হবে এবং সমস্ত সেবা
+                  ব্যবহারকারীদের জন্য সময় সময়ে আদর্শ এবং সমর্থন করা হবে। সেবা
+                  ব্যবহারকারী, কর্মচারী এবং আগমনকারী ব্যক্তির ব্যক্তিগত অদ্ভুততা
+                  চেনা হবে এবং এই সময়গুলিতে এই মানুষগুলি সবসময় মর্যাদা এবং
+                  শ্রদ্ধাশীলতা দেখানো হবে। ব্যক্তিগত গোপনীয়তা প্রয়োজনে সবসময়
+                  মর্যাদা করা হবে এবং সমস্ত ব্যক্তিগুলির তথ্য সংক্ষেপভাবে
+                  ব্যবহৃত হবে। আমরা প্রায়ই সমস্ত ব্যক্তিগুলির জন্য ব্যক্তিগত
+                  পূর্ণতা প্রয়োজন মেলে এবং আমাদের Munissa Kare এর সেবা
+                  ব্যবহারকারীদের এবং কর্মচারীদের জন্য অর্থনীতি করতে চেষ্টা করছি।
+                </p>
+                <h5>
+                  Munissa Kare Services হলো এমন উপায়ে ভিত্তি এবং মৌল্যবানের উপর
+                  যা:
+                </h5>
+                <h5>
+                  গোপনীয়তা:{" "}
+                  <span>
+                    আপনার যত্ন কর্মী আপনারকে একক থাকতে, বিচ্ছিন্ন এবং অব্যাহত
+                    এবং সর্বাধিক উপকৃত এবং সার্বজনীন মনোভাবে ছাড়া দেওয়ার
+                    অধিকার পর্যন্ত।
+                  </span>
+                </h5>
+              </div>
+            )}
+
+            {language === "soomali" && (
+              <div data-aos="fade-right" className="Philosophy-details">
+                <div className="headings">
+                  <h2>Falsafadayada Kaalinta.</h2>
+                </div>
+                <p>
+                  Munissa Kare wuxuu ku dadaalayaa inuu bixiyo adeegyo kaalinta
+                  shakhsiga ah iyo adeegyada gudaha ee la xiriira si loo maaro
+                  waxyaabooyinka ay adeegsadaan Hay'adda Adeega ee ay ku
+                  xadgudbayaan xaaladaha xaaladaha. Dhammaan dadka ay
+                  adeegsadaan, waxaana ka shaqaynaya shaqaale ku filan si loo
+                  gaaro xaaladaha ugu danbeeya ee caafimaadka iyo wanaagsan.
+                  Xiriirka shakhsi iyo qalqalinta shakhsiyaadka waa xaquuq kasta
+                  oo dadka adeegsan Munissa Kare uu taageero. Xaquuqda madaniga
+                  waa inay aqbalaan karaan iyo inay wax ka qabtaan dhammaan
+                  dadka adeegsan ee Munissa Kare. Uniqueness shakhsiyeed ee
+                  Adeega, shaqaale iyo booqdayaasha waxa lagu aqoonsan karaa,
+                  waxayna lagu k treating dignitaad iyo hormariyeysan dhammaan
+                  wakhtigan. Talowadaadka shakhsi waa inay lagu taageeraan
+                  wakhtigan oo dhan, waxaana lagu tijaabi karaa dhammaan
+                  macluumaadka ku saabsan shakhsiyeedka. Waxa aan ku
+                  aaminsannahay ujeedada shakhsiga ah ee ku filan, waxaana aan
+                  ku talinaynaa barnaamijyo farsamo oo kaliya oo lagu waantoobo
+                  hagidda ugu sareeya ee Adeega iyo shaqaale Munissa Kare.
+                </p>
+                <h5>
+                  Munissa Kare Services waxaa la xiriira Axdiyada iyo Qalimada
+                  ah:
+                </h5>
+                <h5>Privaasi:</h5>
+                <span>
+                  Shaqaalahaaga adeega wuxuu ku aqoonsan doonaa haqkii aad u
+                  ekaan lahayd, aan dhicin, aan midna lahayn, iyo aan xadhiga
+                  bulshada lahayn.
+                </span>
+              </div>
+            )}
+
             {language === "hindi" && (
               <div data-aos="fade-right" className="Philosphy-details">
                 <div className="headings">

@@ -17,6 +17,22 @@ function Hero() {
             <h5>Download our mobile app</h5>
           </div>
         )}
+        {language === "soomali" && (
+          <div className="overflow">
+            <h3 data-aos="fade-right">
+              Soo hel adeegyadayada ugu Fiican oo ay bixiyaan khusuusiyadeena.{" "}
+            </h3>
+            <h5>Soo deji app-ka moobilka</h5>
+          </div>
+        )}
+        {language === "bengali" && (
+          <div className="overflow">
+            <h3 data-aos="fade-right">
+              আমাদের বিশেষজ্ঞ দ্বারা প্রদত্ত আমাদের সেরা পরিষেবা খুঁজুন.{" "}
+            </h3>
+            <h5>আমাদের মোবাইল অ্যাপ ডাউনলোড করুন</h5>
+          </div>
+        )}
         {language === "hindi" && (
           <div className="overflow">
             <h3 data-aos="fade-right">

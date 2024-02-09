@@ -120,3 +120,114 @@ export const ServiceData2: any = [
       "हम खरीददारी कॉल करते हैं 5 किलोग्राम तक, लेकिन कोई शराब की खरीदारी नहीं।",
   },
 ];
+export const ServiceData3: any = [
+  {
+    title: "ব্যক্তিগত যত্ন",
+    images: LiaUserNurseSolid,
+    discription:
+      "আমরা মুসুড়ি ব্যবহার, দাঁত/ডেনচার ব্রাশ করা, শাওয়ার/স্ট্রিপ ওয়াশ, ক্রিম প্রয়োগ, পোশাক পরা, সাজতে, ও বিছানা তৈরি করতে সাহায্য এবং সমর্থন করি।",
+  },
+  {
+    title: "খাদ্য প্রস্তুতি",
+    images: GiMeal,
+    discription:
+      "আমরা সাহায্য করি এবং হালকা সকালানো, পূর্ব-কুক্ত খাবার উজ্জিপন করি এবং পরিষেবা করি",
+  },
+  {
+    title: "ওষুধ",
+    images: MdOutlineMedication,
+    discription:
+      "আমরা ওষুধ প্রম্পট করতে পারি যতক্ষণ প্যাকেটে থাকে এবং পৃষ্ঠতলে কোনও ওষুধ উপকৃত থাকে তাতে যে কোনও ওষুধ হারিয়ে যাওয়া ও রক্ষণাবেক্ষণ করা যাবে।",
+  },
+  {
+    title: "হালকা গৃহস্থান",
+    images: GiStreetLight,
+    discription:
+      "আমরা হালকা গৃহস্থান করি (গভীর নয়) এবং দৈনন্দিন আধারে পরিষ্কার সাহায্য করি।",
+  },
+  {
+    title: "সঙ্গীতি",
+    images: GiCompanionCube,
+    discription:
+      "আমরা আপনার বাড়িতে আসবো, আপনার সাথে সময় কাটাবো, হয়তো কফি বা চা খাবো, আপনাকে সাধারিত কাজে সাহায্য করবো, মাথার ব্যাপ্তি বাড়াতে মনোনিবেশ করতে খেলা খেলবো, এবং হয়তো আপনাকে চলার উপযুক্ত করতে।",
+  },
+  {
+    title: "বাইরে এসকর্ট এবং আন্তর্জাতিক ভ্রমণ",
+    images: IoIosAirplane,
+    discription:
+      "আমরা আপনাকে ডাকঘর, ব্যাংক, বাহ্যিক ক্রিয়াকলাপ এবং আন্তর্জাতিক ভ্রমণে এস্কর্ট করবো (যদি সমস্ত খরচ ক্লায়েন্ট দ্বারা নেওয়া হয়)",
+  },
+  {
+    title: "অশ্রয়",
+    images: FaHandshake,
+    discription:
+      "আমরা মৌলিক যত্নকারী বেরোনার জন্য ক্লায়েন্ট একবার বের যাওয়ার সময় ক্লায়েন্ট দ্বারা নিজেকে যত্ন নিতে এবং খাবার, মুসুড়ি, এবং অন্যান্য সাহায্য প্রয়োজন হলে সহায়ক হবো।",
+  },
+  {
+    title: "সাধারণ এবং মানসিক স্বাস্থ্য",
+    images: MdOutlineHealthAndSafety,
+    discription:
+      "আমরা আমাদের গ্রাহকদের এমোশনাল, মানসিক, এবং সামাজিক ভালবাসার সুস্থতা সমর্থন এবং মনোনিবেশের উপর মনিটর করি। আমরা দেখতে কেন ওয়ার্থিং, ফীলিং, এবং ভ্যাক্টিং সময়ের সময়ে কিভাবে চিনতে তাদের স্ট্রেস, অন্যান্যদের সাথে সম্পর্ক করতে এবং সুস্থ নির্ধারণ করতে তাদের ভিজিটের সময়ে।",
+  },
+  {
+    title: "কেনাকাটা",
+    images: IoCartOutline,
+    discription:
+      "আমরা 5 কেজির তমত কেনাকাটা করি কিন্তু কোনও মদ কেনাকাটা করা হয়নি।",
+  },
+];
+export const ServiceData4: any = [
+  {
+    title: "Jiilka Shakhsi",
+    images: LiaUserNurseSolid,
+    discription:
+      "Waanu caawinno oo aanu taageerno qaybinta, sawirrada fagaaraya, iyo korontoowga maraakiibta, korontoowga dhinaanta, shaqaalaynta, garaacinta iyo sariirta.",
+  },
+  {
+    title: "Cunto",
+    images: GiMeal,
+    discription:
+      "Waanu caawinno oo aanu cunto liito, cuntooyinka hilibka ku darinno iyo cunno",
+  },
+  {
+    title: "Daawayn",
+    images: MdOutlineMedication,
+    discription:
+      "Waanu kari karnaa daawayn inta u dhaxeeya faksetka illaa laga helo codkii daaweynta oo la socdaalay dukaanka duwan.",
+  },
+  {
+    title: "Gurmadka Guryaha",
+    images: GiStreetLight,
+    discription:
+      "Waanu sameynno gurmad dhaqaale oo ku saleysan (ma ahan gacan) iyo taageerada nolosha maalinta kasta.",
+  },
+  {
+    title: "Soo Dhoweyn",
+    images: GiCompanionCube,
+    discription:
+      "Waanu booqanno gurigaaga, samaynno wakht aad u fara badan aduunka ama shayga, caawinno fiiro gaar ah, ciyaaro kala duwan si aad u dhalaalato fikirkooda, oo hadda oo kale waad ugu biiraysaa inaad dhaqso ugu sii waddo.",
+  },
+  {
+    title: "Soo saarida Kharajinta iyo Safarka Caalamka",
+    images: IoIosAirplane,
+    discription:
+      "Waanu kari karnaa inaad noqoto kuwa saarkaaga post office, bank, hawlaha dibadda iyo safarka caalamka (isla markaasina lacagtu dhammaan lagu dejiyo Masiibo).",
+  },
+  {
+    title: "Hirgalinta",
+    images: FaHandshake,
+    discription:
+      "Waanu kari karnaa inaanu ku dhex jirno muddo uu u tago haweenayda ugu tala gasho wakhtiga lagu tago inay ku dhoweyso, si ay ugu qiimo badnaadaan iyo inay u dhaqmaan. Wakhtiga lagu jiro, waanu kari karnaa inaanu caawinno cunto, muddo la socdaalka iyo wax kale oo ay u baahan yihiin.",
+  },
+  {
+    title: "Caafimaad Guud & Maskax",
+    images: MdOutlineHealthAndSafety,
+    discription:
+      "Waanu taageerno iyo monitorano guudka, maskaxda, iyo walaacda guud ee adeegsiga. Waxa aanu fokuska u qaadanaynaa sida ay u fikirayaan, u tilmaamayaan, iyo u dhaqaaqaan wakhtiga booqashada si loo ogaado sida ay u celiyaan cabsida, u wada raacdo dadka kale, iyo xulista dhinaca nolosha.",
+  },
+  {
+    title: "Kenakata",
+    images: IoCartOutline,
+    discription: "Waanu kenno 5KG ka yar laakin makhruuf ma kari karno.",
+  },
+];

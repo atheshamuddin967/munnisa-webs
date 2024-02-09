@@ -21,3 +21,24 @@ export const Data2 = [
   { title: "खाद्य सहायता", images: Images.food },
   { title: "विश्राम", images: Images.repsit },
 ];
+export const Data3 = [
+  { title: "কেনাকাটা", images: Images.shopping },
+  { title: "সঙ্গীতি", images: Images.companion },
+  { title: "ঔষধ", images: Images.medication },
+  { title: "সাধারণ এবং মানসিক স্বাস্থ্য", images: Images.genral },
+  { title: "ব্যক্তিগত যত্ন", images: Images.personal },
+  { title: "সহগমন", images: Images.escorting },
+  { title: "খাদ্য সাহায্য", images: Images.food },
+  { title: "রিসপাইট", images: Images.repsit },
+];
+
+export const Data4 = [
+  { title: "Xarunta", images: Images.shopping },
+  { title: "Iskaashi", images: Images.companion },
+  { title: "Daawayn", images: Images.medication },
+  { title: "Caafimaadka Guud iyo Caafimaadka Maskaxda", images: Images.genral },
+  { title: "Daryeelka Shakhsi", images: Images.personal },
+  { title: "Ku guulso", images: Images.escorting },
+  { title: "Caawinta Cuntooyinka", images: Images.food },
+  { title: "Fara Galinta", images: Images.repsit },
+];

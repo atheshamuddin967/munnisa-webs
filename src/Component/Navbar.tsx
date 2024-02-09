@@ -61,6 +61,56 @@ function Navbar() {
                 </li>
               </ul>
             )}
+            {language === "bengali" && (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    to="/Home"
+                  >
+                    হোম
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                    to="/Hire"
+                  >
+                    আমাদের কাছে নিয়োগ করুন
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    একটি সেবা তৈরি করুন
+                  </Link>
+                </li>
+              </ul>
+            )}
+            {language === "soomali" && (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    to="/Home"
+                  >
+                    guriga
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                    to="/Hire"
+                  >
+                    na shaqaaleysii
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    adeeg abuur
+                  </Link>
+                </li>
+              </ul>
+            )}
             {language === "hindi" && (
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li className="nav-item">
@@ -91,12 +141,24 @@ function Navbar() {
                 <select name="" id="" onChange={handleLanguageChange}>
                   <option value="en">en</option>
                   <option value="hindi">हिंदी</option>
+                  <option value="bengali">বাংলা</option>
+                  <option value="soomali">somaliyeed</option>
                 </select>
               </li>
               <li className="nav-item">
                 {language === "en" && (
                   <Link to="/Signin" className="singup">
                     SignUp
+                  </Link>
+                )}
+                {language === "bengali" && (
+                  <Link to="/Signin" className="singup">
+                    নিবন্ধন
+                  </Link>
+                )}
+                {language === "soomali" && (
+                  <Link to="/Signin" className="singup">
+                    saxiix
                   </Link>
                 )}
                 {language === "hindi" && (

@@ -28,11 +28,30 @@ function Footer() {
                   <p>हम चुनौती के लिए तैयार हैं info@munissakareservices.com</p>
                 </div>
               )}
+              {language === "bengali" && (
+                <div className="footerlist">
+                  <h6>একটি প্রকল্প শুরু করুন</h6>
+                  <p>
+                    আমরা চ্যালেঞ্জের জন্য প্রস্তুত info@munissakareservices.com
+                  </p>
+                </div>
+              )}
+              {language === "soomali" && (
+                <div className="footerlist">
+                  <h6>BILAABAN PROJEECT</h6>
+                  <p>
+                    Waxaanu diyaar u nahay mahaadho info@munissakareservices.com
+                  </p>
+                </div>
+              )}
             </div>
             <div className="col-sm-4">
               <div className="footerlist">
                 {language == "en" && <h6>SAY HELLO</h6>}
                 {language == "hindi" && <h6>नमस्ते कहें</h6>}
+                {language === "bengali" && <h6>হ্যালো বলুন</h6>}
+                {language === "soomali" && <h6>KA DAAWO</h6>}
+
                 <ul>
                   {language === "en" && (
                     <li>
@@ -40,6 +59,19 @@ function Footer() {
                       Avenue,London NW67UA
                     </li>
                   )}
+                  {language === "bengali" && (
+                    <li>
+                      <LuMapPin /> অফিস #12, 1 কলেজ ইয়ার্ড, 56 উইনচেস্টার
+                      অ্যাভিনিউ, লন্ডন NW67UA
+                    </li>
+                  )}
+                  {language === "soomali" && (
+                    <li>
+                      <LuMapPin /> Ofiis #12, 1 College Yard, 56 Winchester
+                      Avenue, London NW67UA
+                    </li>
+                  )}
+
                   {language === "hindi" && (
                     <li>
                       <LuMapPin /> कार्यालय #12, 1 कॉलेज यार्ड, 56 विनचेस्टर
@@ -63,6 +95,21 @@ function Footer() {
                   <h6>Jobs</h6>
                   <p>
                     We are always looking for talent
+                    info@munissakareservices.com
+                  </p>
+                </div>
+              )}
+              {language === "bengali" && (
+                <div className="footerlist">
+                  <h6>চাকরি</h6>
+                  <p>আমরা সবসময় দক্ষতা খুঁজছি info@munissakareservices.com</p>
+                </div>
+              )}
+              {language === "soomali" && (
+                <div className="footerlist">
+                  <h6>SHAQOYIN</h6>
+                  <p>
+                    Waxaanu mar walba raadinaynaa xirfad
                     info@munissakareservices.com
                   </p>
                 </div>

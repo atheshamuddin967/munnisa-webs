@@ -47,6 +47,8 @@ function ContactUs() {
         <div className="headings text-center">
           {language === "en" && <h2>Contact Us</h2>}
           {language === "hindi" && <h2>हमारी टीम</h2>}
+          {language === "bengali" && <h2>যোগাযোগ করুন</h2>}
+          {language === "soomali" && <h2>Nala soo xiriir</h2>}
         </div>
         <Formik
           initialValues={formData}
@@ -59,6 +61,9 @@ function ContactUs() {
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && <label htmlFor="name">Name</label>}
                 {language === "hindi" && <label htmlFor="name">नाम</label>}
+                {language === "bengali" && <label htmlFor="name">নাম</label>}
+                {language === "soomali" && <label htmlFor="name">Magaca</label>}
+
                 <Field type="text" id="name" name="name" />
                 <ErrorMessage
                   name="name"
@@ -69,6 +74,11 @@ function ContactUs() {
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && <label htmlFor="email">Email</label>}
                 {language === "hindi" && <label htmlFor="email">ईमेल</label>}
+                {language === "bengali" && <label htmlFor="email">ইমেইল</label>}
+                {language === "soomali" && (
+                  <label htmlFor="email">Iimayl</label>
+                )}
+
                 <Field type="text" id="email" name="email" />
                 <ErrorMessage
                   name="email"
@@ -79,6 +89,13 @@ function ContactUs() {
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && <label htmlFor="number">Number</label>}
                 {language === "hindi" && <label htmlFor="number">संख्या</label>}
+                {language === "bengali" && (
+                  <label htmlFor="number">নম্বর</label>
+                )}
+                {language === "soomali" && (
+                  <label htmlFor="number">Nambarka</label>
+                )}
+
                 <Field type="text" id="number" name="number" />
                 <ErrorMessage
                   name="number"
@@ -93,6 +110,13 @@ function ContactUs() {
                 {language === "hindi" && (
                   <label htmlFor="description">विवरण</label>
                 )}
+                {language === "bengali" && (
+                  <label htmlFor="description">বর্ণনা</label>
+                )}
+                {language === "soomali" && (
+                  <label htmlFor="description">Qeexo</label>
+                )}
+
                 <Field
                   as="textarea"
                   rows={5}
@@ -106,9 +130,16 @@ function ContactUs() {
                 />
               </div>
               <div className="inpbox">
-                <button type="submit">
-                  {language === "en" ? "Submit" : "प्रस्तुत करें"}
-                </button>
+                {language === "en" && <button type="submit">submit</button>}
+                {language === "hindi" && (
+                  <button type="submit">प्रस्तुत करें</button>
+                )}
+                {language === "bengali" && (
+                  <button type="submit">জমা দিন</button>
+                )}
+                {language === "soomali" && (
+                  <button type="submit">Ku qor</button>
+                )}
               </div>
             </div>
           </Form>
