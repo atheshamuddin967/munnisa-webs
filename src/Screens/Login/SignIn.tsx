@@ -83,7 +83,7 @@ function SignIn() {
                     className="error text-danger"
                   />
                   <p className="forget">
-                    <Link to="/">forget password?</Link>
+                    <Link to="/forget">forget password?</Link>
                   </p>
                   <div className="singBtn">
                     <button type="submit">SignIn</button>

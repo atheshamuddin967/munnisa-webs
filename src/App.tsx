@@ -1,7 +1,7 @@
 import "../src/Styles/Global.scss";
 import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import Home from "./Screens/Home/Home";
 import Navbar from "./Component/Navbar";
@@ -10,9 +10,10 @@ import Hireus from "./Screens/Hire/Hireus";
 import SignIn from "./Screens/Login/SignIn";
 import SignUp from "./Screens/Login/SignUp";
 import { useEffect } from "react";
+import Forget from "./Screens/Login/Forge";
+import ChangePassword from "./Screens/Login/ChangePassword";
 
 function App() {
-
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -31,6 +32,9 @@ function App() {
         <Route path={"/Hire"} element={<Hireus />} />
         <Route path={"/Signin"} element={<SignIn />} />
         <Route path={"/Signup"} element={<SignUp />} />
+        <Route path={"/forget"} element={<Forget />} />
+        <Route path={"/forget"} element={<Forget />} />
+        <Route path={"/changePassword"} element={<ChangePassword />} />
       </Routes>
 
       <Footer />

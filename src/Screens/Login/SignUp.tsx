@@ -4,7 +4,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -17,6 +17,19 @@ function SignUp() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setSignUpData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    console.log(signUpData);
+  }, [signUpData]);
+
   const onSubmit = (values: any, { resetForm }: any): void => {
     if (!values) {
       toast.error("Please fill in the form");
