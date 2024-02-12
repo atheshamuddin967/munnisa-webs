@@ -1,53 +1,51 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Images from "../../images/Images";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useApi } from "../../context/Api";
 function SignUp() {
+  const { signupUser } = useApi();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const [signUpData, setSignUpData] = useState({
     name: "",
-    number: "",
+    phone: "",
     email: "",
     password: "",
   });
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
 
-    setSignUpData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  useEffect(() => {
-    console.log(signUpData);
-  }, [signUpData]);
+  // useEffect(() => {
+  //   console.log(signUpData);
+  // }, [signUpData]);
 
   const onSubmit = (values: any, { resetForm }: any): void => {
     if (!values) {
-      toast.error("Please fill in the form");
+      toast.error("Please fill in the form", { position: "bottom-right" });
       return;
     }
+    if (values) {
+      setSignUpData(values);
+      console.log(values);
+      signupUser(values);
 
-    // Your form submission logic here
+      toast.success("Signup Successfully", { position: "bottom-right" });
+      navigate("/Signin");
+      resetForm();
+    }
 
-    toast.success("Signup Successfully");
-    setSignUpData(values);
-    console.log(signUpData);
     // Clear form fields after submission
-    resetForm();
   };
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
-    number: Yup.string()
+    phone: Yup.string()
       .matches(/^\d+$/, "Phone number must be numeric")
       .min(10, "Phone number must be at least 10 digits")
       .max(12, "Phone number must not exceed 12 digits")
@@ -87,13 +85,13 @@ function SignUp() {
                   <div className="inpbox3">
                     <Field
                       type="text"
-                      id="number"
-                      name="number"
+                      id="phone"
+                      name="phone"
                       placeholder="Phone #"
                     />
                   </div>
                   <ErrorMessage
-                    name="number"
+                    name="phone"
                     component="div"
                     className="error "
                   />

@@ -1,8 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import Logo from "../../src/images/Logo.png";
+import { useApi } from "../context/Api";
+import { IoIosLogOut } from "react-icons/io";
+
 function Navbar() {
+  const { user } = useApi();
+  const users: any = user;
+  const authentication = users?.email;
   const location = useLocation();
+
   const isActive = (path: string) => {
     // If the current pathname is not available, default to "/Home"
     const activePath = location.pathname || "/Home";
@@ -16,6 +23,15 @@ function Navbar() {
   ) => {
     const selectedLanguage = event.target.value;
     setLanguage(selectedLanguage);
+  };
+  const handleLogout = () => {
+    // Clear user credentials from localStorage
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userPassword");
+    window.location.reload();
+    // Call the signoutUser function if available
+
+    // Redirect to the home page or any other desired page after logout
   };
   return (
     <div>
@@ -146,25 +162,34 @@ function Navbar() {
                 </select>
               </li>
               <li className="nav-item">
-                {language === "en" && (
-                  <Link to="/Signin" className="singup">
-                    SignUp
-                  </Link>
-                )}
-                {language === "bengali" && (
-                  <Link to="/Signin" className="singup">
-                    নিবন্ধন
-                  </Link>
-                )}
-                {language === "soomali" && (
-                  <Link to="/Signin" className="singup">
-                    saxiix
-                  </Link>
-                )}
-                {language === "hindi" && (
-                  <Link to="/Signin" className="singup">
-                    साइन अप
-                  </Link>
+                {authentication ? (
+                  <button className="logout" onClick={handleLogout}>
+                    <IoIosLogOut />
+                  </button>
+                ) : (
+                  <>
+                    {" "}
+                    {language === "en" && (
+                      <Link to="/Signin" className="singup">
+                        SignUp
+                      </Link>
+                    )}
+                    {language === "bengali" && (
+                      <Link to="/Signin" className="singup">
+                        নিবন্ধন
+                      </Link>
+                    )}
+                    {language === "soomali" && (
+                      <Link to="/Signin" className="singup">
+                        saxiix
+                      </Link>
+                    )}
+                    {language === "hindi" && (
+                      <Link to="/Signin" className="singup">
+                        साइन अप
+                      </Link>
+                    )}
+                  </>
                 )}
               </li>
             </ul>

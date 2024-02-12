@@ -9,16 +9,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
+import { useApi } from "../../context/Api";
 
 function Hireus() {
   const { language } = useLanguage();
+  const { CreateRequest } = useApi();
   const [startDate, setStartDate] = useState(new Date());
   const [hireUsData, setHireUsData] = useState({
     name: "",
     email: "",
     title: "",
-    serviceType: "",
-    date: "",
+    type: "",
+    date: startDate,
     budget: "",
     description: "",
   });
@@ -29,7 +31,7 @@ function Hireus() {
       .email("Invalid email address")
       .required("Email is required"),
     title: Yup.string().required("Title is required"),
-    serviceType: Yup.string().required("Service type is required"),
+    type: Yup.string().required("Service type is required"),
     budget: Yup.string().required("Budget is required"),
     description: Yup.string().required("Description is required"),
   });
@@ -73,15 +75,18 @@ function Hireus() {
           onSubmit={(values, { resetForm }) => {
             if (!values) {
               toast.error("Please fill in the form");
+              console.log(values);
               return;
             }
+            if (values) {
+              toast.success("Form submitted successfully");
+              setHireUsData(values);
+              CreateRequest(values);
+              console.log(values);
 
-            toast.success("Form submitted successfully");
-            setHireUsData(values);
-            console.log(hireUsData);
-
-            // Clear form fields after submission
-            resetForm();
+              // Clear form fields after submission
+              resetForm();
+            }
           }}
         >
           <Form className="formsLayout">
@@ -129,20 +134,18 @@ function Hireus() {
                 />
               </div>
               <div className="inpbox">
-                {language == "en" && (
-                  <label htmlFor="serviceType">Service type</label>
-                )}
+                {language == "en" && <label htmlFor="type">Service type</label>}
                 {language === "bengali" && (
-                  <label htmlFor="serviceType">সেবা প্রকার</label>
+                  <label htmlFor="type">সেবা প্রকার</label>
                 )}
                 {language === "soomali" && (
-                  <label htmlFor="serviceType">Noocya Adeega</label>
+                  <label htmlFor="type">Noocya Adeega</label>
                 )}
 
                 {language == "hindi" && (
-                  <label htmlFor="serviceType">सेवा का प्रकार</label>
+                  <label htmlFor="type">सेवा का प्रकार</label>
                 )}
-                <Field as="select" id="serviceType" name="serviceType">
+                <Field as="select" id="type" name="type">
                   <option value="" disabled selected>
                     Select type
                   </option>
