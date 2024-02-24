@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import Forget from "./Screens/Login/Forge";
 import ChangePassword from "./Screens/Login/ChangePassword";
 import { useApi } from "./context/Api";
+import CovidScreen from "./Screens/Covid/CovidScreen";
 
 function App() {
   const { signinUser } = useApi();
@@ -54,6 +55,7 @@ function App() {
         <Route path={"/Signin"} element={<SignIn />} />
         <Route path={"/Signup"} element={<SignUp />} />
         <Route path={"/forget"} element={<Forget />} />
+        <Route path={"/Covid"} element={<CovidScreen />} />
 
         <Route
           path={`/changePassword/:id/:token`}

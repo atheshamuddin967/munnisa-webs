@@ -1,5 +1,6 @@
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
+import Covid from "./Covid";
 import Feature from "./Feature";
 import Hero from "./Hero";
 import Philosphy from "./Philosphy";
@@ -13,6 +14,7 @@ function Home() {
       <Philosphy />
       <Services />
       <AboutUs />
+      <Covid />
       <ContactUs />
     </div>
   );
