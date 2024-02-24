@@ -629,7 +629,13 @@ font-weight: 600;
     }
 }
 
-
+.GuideLine{
+    background-color: green;
+    color: white;
+    padding:8px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
 // responsive
     @media screen and (max-width: 991px) {
         .navbar{
@@ -644,6 +650,9 @@ font-weight: 600;
         .nav-link::before{
             display: none !important;
         }
+     .n2{
+        margin: 10px 0 !important;
+     }
     }
     @media screen and (max-width: 850px) {
         .covidli ul{

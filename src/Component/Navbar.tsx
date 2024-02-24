@@ -161,6 +161,30 @@ function Navbar() {
                   <option value="soomali">somaliyeed</option>
                 </select>
               </li>
+
+              <li className=" n2">
+                {language == "en" && (
+                  <Link className="GuideLine" to="/Covid">
+                    Covid Guideline
+                  </Link>
+                )}
+                {language == "hindi" && (
+                  <Link className="GuideLine" to="/Covid">
+                    कोविड गाइडलाइन
+                  </Link>
+                )}
+                {language == "bengali" && (
+                  <Link className="GuideLine" to="/Covid">
+                    কোভিড নির্দেশিকা
+                  </Link>
+                )}
+                {language == "soomali" && (
+                  <Link className="GuideLine" to="/Covid">
+                    tilmaamaha covid
+                  </Link>
+                )}
+              </li>
+
               <li className="nav-item">
                 {authentication ? (
                   <button className="logout" onClick={handleLogout}>
