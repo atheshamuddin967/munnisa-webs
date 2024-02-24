@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 function Forget() {
   const { forgetPw } = useApi();
-  const [email, setEmail] = useState("");
+
   const [loginData, setLoginData] = useState({
     email: "",
   });
