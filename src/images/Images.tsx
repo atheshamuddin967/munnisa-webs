@@ -14,7 +14,7 @@ import genral from "./genral.jpg";
 import shopping from "./shopping.jpg";
 import repsit from "./repsit.jpg";
 import games from "./games.jpg";
-import About from "./about.jpg";
+import About from "./Team.jpg";
 import Login from "./login.png";
 
 const Images: any = {

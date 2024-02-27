@@ -180,7 +180,7 @@ function Footer() {
         </div>
       </div>
       <div className="copy">
-        all &#169;copy right reserved by munissa care services
+        all &#169;copy right reserved by munissa kare services
       </div>
     </div>
   );
