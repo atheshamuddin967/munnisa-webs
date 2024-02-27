@@ -14,8 +14,9 @@ import Forget from "./Screens/Login/Forge";
 import ChangePassword from "./Screens/Login/ChangePassword";
 import { useApi } from "./context/Api";
 import CovidScreen from "./Screens/Covid/CovidScreen";
-
+import { useLanguage } from "./context/LanguageContext";
 function App() {
+  const { language } = useLanguage();
   const { signinUser } = useApi();
   useEffect(() => {
     AOS.init({
@@ -43,7 +44,7 @@ function App() {
   }, []);
 
   return (
-    <div className="box">
+    <div className={`box ${language === "arabic" ? "rights" : ""}`}>
       <div className="sticky">
         <Navbar />
       </div>

@@ -117,12 +117,13 @@ left: 0;
         left: 10%;
         z-index: 1;
         h3{
-max-width: 60%;
+// max-width: 60%;
 line-height:40px;
 margin-bottom:20px ;
         }
-        h6{
+        h5{
             margin-bottom: 20px;
+            // max-width: 60%;
         }
 
     }
@@ -636,6 +637,13 @@ font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
 }
+
+
+.rights{
+    text-align: right !important;
+}
+
+
 // responsive
     @media screen and (max-width: 991px) {
         .navbar{
