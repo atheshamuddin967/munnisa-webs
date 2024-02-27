@@ -17,6 +17,14 @@ function Hero() {
             <h5>Download our mobile app</h5>
           </div>
         )}
+        {language === "arabic" && (
+          <div className="overflow">
+            <h3 data-aos="fade-right">
+              ابحث عن أفضل الخدمات التي تقدمها خدماتنا المتخصصة.
+            </h3>
+            <h5>قم بتنزيل تطبيق الهاتف المحمول الخاص بنا</h5>
+          </div>
+        )}
         {language === "soomali" && (
           <div className="overflow">
             <h3 data-aos="fade-right">

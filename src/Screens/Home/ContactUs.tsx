@@ -46,6 +46,7 @@ function ContactUs() {
       <div className="container">
         <div className="headings text-center">
           {language === "en" && <h2>Contact Us</h2>}
+          {language === "arabic" && <h2>اتصل بنا</h2>}
           {language === "hindi" && <h2>हमारी टीम</h2>}
           {language === "bengali" && <h2>যোগাযোগ করুন</h2>}
           {language === "soomali" && <h2>Nala soo xiriir</h2>}
@@ -60,6 +61,8 @@ function ContactUs() {
             <div className="formdata">
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && <label htmlFor="name">Name</label>}
+
+                {language === "arabic" && <label htmlFor="name">اسم</label>}
                 {language === "hindi" && <label htmlFor="name">नाम</label>}
                 {language === "bengali" && <label htmlFor="name">নাম</label>}
                 {language === "soomali" && <label htmlFor="name">Magaca</label>}
@@ -73,6 +76,10 @@ function ContactUs() {
               </div>
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && <label htmlFor="email">Email</label>}
+                {language === "arabic" && (
+                  <label htmlFor="email">بريد إلكتروني</label>
+                )}
+
                 {language === "hindi" && <label htmlFor="email">ईमेल</label>}
                 {language === "bengali" && <label htmlFor="email">ইমেইল</label>}
                 {language === "soomali" && (
@@ -87,6 +94,9 @@ function ContactUs() {
                 />
               </div>
               <div data-aos="zoom-in" className="inpbox">
+                {language === "arabic" && (
+                  <label htmlFor="number">رقم التليفون</label>
+                )}
                 {language === "en" && <label htmlFor="number">Number</label>}
                 {language === "hindi" && <label htmlFor="number">संख्या</label>}
                 {language === "bengali" && (
@@ -106,6 +116,9 @@ function ContactUs() {
               <div data-aos="zoom-in" className="inpbox">
                 {language === "en" && (
                   <label htmlFor="description">Description</label>
+                )}
+                {language === "arabic" && (
+                  <label htmlFor="description">وصف</label>
                 )}
                 {language === "hindi" && (
                   <label htmlFor="description">विवरण</label>
@@ -131,6 +144,9 @@ function ContactUs() {
               </div>
               <div className="inpbox">
                 {language === "en" && <button type="submit">submit</button>}
+                {language === "arabic" && (
+                  <button type="submit">يُقدِّم</button>
+                )}
                 {language === "hindi" && (
                   <button type="submit">प्रस्तुत करें</button>
                 )}

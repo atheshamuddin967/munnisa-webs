@@ -22,6 +22,12 @@ function Footer() {
                   </p>
                 </div>
               )}
+              {language === "arabic" && (
+                <div className="footerlist">
+                  <h6>ابدأ مشروعًا</h6>
+                  <p>نحن مستعدون للتحدي info@munissakareservices.com </p>
+                </div>
+              )}
               {language === "hindi" && (
                 <div className="footerlist">
                   <h6>परियोजना शुरू करें</h6>
@@ -48,6 +54,7 @@ function Footer() {
             <div className="col-sm-4">
               <div className="footerlist">
                 {language == "en" && <h6>SAY HELLO</h6>}
+                {language == "arabic" && <h6>قل مرحبا</h6>}
                 {language == "hindi" && <h6>नमस्ते कहें</h6>}
                 {language === "bengali" && <h6>হ্যালো বলুন</h6>}
                 {language === "soomali" && <h6>KA DAAWO</h6>}
@@ -57,6 +64,13 @@ function Footer() {
                     <li>
                       <LuMapPin /> Office #12, 1 College Yard, 56 Winchester
                       Avenue,London NW67UA
+                    </li>
+                  )}
+
+                  {language === "arabic" && (
+                    <li>
+                      <LuMapPin /> مكتب رقم 12، 1 كوليدج يارد، 56 وينشستر
+                      الجادة، لندن NW67UA
                     </li>
                   )}
                   {language === "bengali" && (
@@ -99,6 +113,12 @@ function Footer() {
                   </p>
                 </div>
               )}
+              {language === "arabic" && (
+                <div className="footerlist">
+                  <h6>وظائف</h6>
+                  <p>نحن نبحث دائما عن المواهب info@munissakareservices.com</p>
+                </div>
+              )}
               {language === "bengali" && (
                 <div className="footerlist">
                   <h6>চাকরি</h6>
@@ -125,6 +145,11 @@ function Footer() {
               <div className="socialicon">
                 <div className="footerlist">
                   {language == "en" && <h6>Social links</h6>}
+                  {language == "bengali" && <h6>সামাজিক বন্ধন</h6>}
+
+                  {language == "arabic" && <h6>روابط اجتماعية</h6>}
+                  {language == "soomali" && <h6>Xiriirinta bulshada</h6>}
+
                   {language == "hindi" && <h6>सामाजिक संपर्क</h6>}
                 </div>
                 <ul>

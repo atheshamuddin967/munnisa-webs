@@ -152,6 +152,31 @@ function Navbar() {
                 </li>
               </ul>
             )}
+            {language === "arabic" && (
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    to="/Home"
+                  >
+                    بيت
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${isActive("/Hire") ? "active" : ""}`}
+                    to="/Hire"
+                  >
+                    استئجار لنا
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    إنشاء خدمة
+                  </Link>
+                </li>
+              </ul>
+            )}
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <select name="" id="" onChange={handleLanguageChange}>
@@ -159,6 +184,7 @@ function Navbar() {
                   <option value="hindi">हिंदी</option>
                   <option value="bengali">বাংলা</option>
                   <option value="soomali">somaliyeed</option>
+                  <option value="arabic">عربي</option>
                 </select>
               </li>
 
@@ -181,6 +207,11 @@ function Navbar() {
                 {language == "soomali" && (
                   <Link className="GuideLine" to="/Covid">
                     tilmaamaha covid
+                  </Link>
+                )}
+                {language == "arabic" && (
+                  <Link className="GuideLine" to="/Covid">
+                    لمبادئ التوجيهية كوفيد
                   </Link>
                 )}
               </li>
@@ -211,6 +242,11 @@ function Navbar() {
                     {language === "hindi" && (
                       <Link to="/Signin" className="singup">
                         साइन अप
+                      </Link>
+                    )}
+                    {language === "arabic" && (
+                      <Link to="/Signin" className="singup">
+                        اشتراك
                       </Link>
                     )}
                   </>

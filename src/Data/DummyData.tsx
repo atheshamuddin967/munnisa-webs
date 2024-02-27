@@ -42,3 +42,13 @@ export const Data4 = [
   { title: "Caawinta Cuntooyinka", images: Images.food },
   { title: "Fara Galinta", images: Images.repsit },
 ];
+export const Data5 = [
+  { title: "التسوق", images: Images.shopping },
+  { title: "الرفقة", images: Images.companion },
+  { title: "دواء", images: Images.medication },
+  { title: "الصحة العامة والعقلية", images: Images.genral },
+  { title: "رعاية شخصية", images: Images.personal },
+  { title: "مرافقة", images: Images.escorting },
+  { title: "المساعدة الغذائية", images: Images.food },
+  { title: "فترة راحة", images: Images.repsit },
+];

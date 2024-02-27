@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Data } from "../../Data/DummyData";
+import { Data, Data5 } from "../../Data/DummyData";
 import { Data2 } from "../../Data/DummyData";
 import { Data3 } from "../../Data/DummyData";
 import { Data4 } from "../../Data/DummyData";
@@ -45,6 +45,12 @@ function Hireus() {
               <div className="hireHeadings">
                 <h4>Create a new query</h4>
                 <h6>Please fill in the details below.</h6>
+              </div>
+            )}
+            {language === "arabic" && (
+              <div className="hireHeadings">
+                <h4>إنشاء استعلام جديد</h4>
+                <h6>يرجى ملء التفاصيل أدناه.</h6>
               </div>
             )}
             {language === "bengali" && (
@@ -95,14 +101,18 @@ function Hireus() {
               <div className="inpbox">
                 {language === "bengali" && <label htmlFor="name">নাম</label>}
                 {language === "soomali" && <label htmlFor="name">Magaca</label>}
-
                 {language == "en" && <label htmlFor="name">Name</label>}
+
+                {language == "arabic" && <label htmlFor="name">اسم</label>}
                 {language == "hindi" && <label htmlFor="name">नाम</label>}
                 <Field type="text" id="name" name="name" />
                 <ErrorMessage name="name" component="div" className="error  " />
               </div>
               <div className="inpbox">
                 {language == "en" && <label htmlFor="email">Email</label>}
+                {language == "arabic" && (
+                  <label htmlFor="email">بريد إلكتروني</label>
+                )}
                 {language == "hindi" && <label htmlFor="email">ईमेल</label>}
                 {language === "bengali" && <label htmlFor="email">ইমেইল</label>}
                 {language === "soomali" && (
@@ -118,6 +128,8 @@ function Hireus() {
               </div>
               <div className="inpbox">
                 {language == "en" && <label htmlFor="title">Title</label>}
+                {language == "arabic" && <label htmlFor="title">عنوان</label>}
+
                 {language == "hindi" && <label htmlFor="title">शीर्षक</label>}
                 {language === "bengali" && (
                   <label htmlFor="title">শিরোনাম</label>
@@ -135,6 +147,10 @@ function Hireus() {
               </div>
               <div className="inpbox">
                 {language == "en" && <label htmlFor="type">Service type</label>}
+                {language == "arabic" && (
+                  <label htmlFor="type">نوع الخدمة</label>
+                )}
+
                 {language === "bengali" && (
                   <label htmlFor="type">সেবা প্রকার</label>
                 )}
@@ -173,6 +189,12 @@ function Hireus() {
                         {item.title}
                       </option>
                     ))}
+                  {language === "arabic" &&
+                    Data5.map((item) => (
+                      <option key={item.title} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
                 </Field>
                 <ErrorMessage
                   name="serviceType"
@@ -182,6 +204,9 @@ function Hireus() {
               </div>
               <div className="inpbox2">
                 {language == "en" && <label htmlFor="date">Select date</label>}
+                {language == "arabic" && (
+                  <label htmlFor="date">حدد تاريخ</label>
+                )}
                 {language === "bengali" && (
                   <label htmlFor="date">তারিখ নির্বাচন করুন</label>
                 )}
@@ -213,6 +238,10 @@ function Hireus() {
                 )}
 
                 {language == "en" && <label htmlFor="budget">Budget</label>}
+                {language == "arabic" && (
+                  <label htmlFor="budget">ميزانية</label>
+                )}
+
                 {language == "hindi" && <label htmlFor="budget">बजट</label>}
                 <Field type="text" id="budget" name="budget" />
                 <ErrorMessage
@@ -224,6 +253,9 @@ function Hireus() {
               <div className="inpbox">
                 {language == "en" && (
                   <label htmlFor="description">Description</label>
+                )}
+                {language == "arabic" && (
+                  <label htmlFor="description">وصف</label>
                 )}
                 {language == "hindi" && (
                   <label htmlFor="description">विवरण</label>
@@ -250,6 +282,11 @@ function Hireus() {
               {language == "en" && (
                 <div className="inpbox">
                   <button type="submit">Submit</button>
+                </div>
+              )}
+              {language == "arabic" && (
+                <div className="inpbox">
+                  <button type="submit">يُقدِّم</button>
                 </div>
               )}
               {language == "hindi" && (

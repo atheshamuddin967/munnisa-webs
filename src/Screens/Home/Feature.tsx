@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Data } from "../../Data/DummyData";
+import { Data, Data5 } from "../../Data/DummyData";
 import { Data2 } from "../../Data/DummyData";
 import { Data3 } from "../../Data/DummyData";
 import { Data4 } from "../../Data/DummyData";
@@ -51,6 +51,7 @@ function Feature() {
       <div className="row space">
         <div className="headings">
           {language === "en" && <h2>Our Featured Services!</h2>}
+          {language === "arabic" && <h2>خدماتنا المميزة!</h2>}
           {language === "benagli" && <h2>আমাদের বৈশিষ্ট্যযুক্ত পরিষেবা!</h2>}
           {language === "soomali" && <h2>Adeegyadayada Sifaysan!</h2>}
           {language === "hindi" && <h2>हमारी विशिष्ट सेवाएँ!</h2>}
@@ -95,6 +96,18 @@ function Feature() {
           {language === "soomali" && (
             <Slider {...settings}>
               {Data4?.map((item) => (
+                <div className="col-sm-4">
+                  <div className="sliders">
+                    <img src={item?.images} alt="Slide" />
+                    <h6>{item?.title}</h6>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          )}
+          {language === "arabic" && (
+            <Slider {...settings}>
+              {Data5?.map((item) => (
                 <div className="col-sm-4">
                   <div className="sliders">
                     <img src={item?.images} alt="Slide" />
