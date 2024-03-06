@@ -71,9 +71,11 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="#">
-                    Create a service
-                  </Link>
+                  {/* <Link className="nav-link" to="/Home"> */}
+                    <a className="nav-link" href="#contact">
+                      Create a Booking
+                    </a>
+                    {/* </Link> */}
                 </li>
               </ul>
             )}

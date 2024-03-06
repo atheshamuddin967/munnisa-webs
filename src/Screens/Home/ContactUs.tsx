@@ -42,9 +42,9 @@ function ContactUs() {
   });
 
   return (
-    <div className="contact">
+    <div className="contact" >
       <div className="container">
-        <div className="headings text-center">
+        <div id="contact" className="headings text-center">
           {language === "en" && <h2>Contact Us</h2>}
           {language === "arabic" && <h2>اتصل بنا</h2>}
           {language === "hindi" && <h2>हमारी टीम</h2>}
