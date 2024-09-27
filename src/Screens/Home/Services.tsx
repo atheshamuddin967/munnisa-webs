@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ServiceData, ServiceData5 } from "../../Data/ServicesData";
 import { ServiceData2 } from "../../Data/ServicesData";
 import { ServiceData3 } from "../../Data/ServicesData";
@@ -6,8 +6,18 @@ import { ServiceData4 } from "../../Data/ServicesData";
 import AOS from "aos";
 import { useLanguage } from "../../context/LanguageContext";
 function Services() {
+  const [isDetailModal, setIsDetailModal] = useState<any>(false);
+  const [serviceDetail , setServiceDetail] = useState<any>('')
   const { language } = useLanguage();
+const handleViewDetail = (item: any) => {
+  console.log(item)
+  setServiceDetail(item)
+  setIsDetailModal(true)
 
+}
+const closeModal = () => {
+  setIsDetailModal(false)
+}
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
@@ -30,8 +40,8 @@ function Services() {
         {language === "en" && (
           <div className="row ">
             {ServiceData.map((item: any) => (
-              <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
-                <div className="servicedetails">
+              <div data-aos="zoom-in"  className=" col-lg-3 col-md-4 col-sm-6">
+                <div onClick={()=>handleViewDetail(item)} style={{cursor:'pointer'}} className="servicedetails">
                   <div className="iconBox">
                     {React.createElement(item.images, { size: 30 })}
                   </div>
@@ -46,13 +56,15 @@ function Services() {
           <div className="row ">
             {ServiceData5.map((item: any) => (
               <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
-                <div className="servicedetails">
+                <div onClick={()=>handleViewDetail(item)} style={{cursor:'pointer'}} className="servicedetails">
                   <div className="iconBox">
                     {React.createElement(item.images, { size: 30 })}
                   </div>
                   <h6>{item?.title}</h6>
                   <p>{item?.discription}</p>
+                  
                 </div>
+            
               </div>
             ))}
           </div>
@@ -61,7 +73,7 @@ function Services() {
           <div className="row ">
             {ServiceData3.map((item: any) => (
               <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
-                <div className="servicedetails">
+                <div onClick={()=>handleViewDetail(item)} style={{cursor:'pointer'}} className="servicedetails">
                   <div className="iconBox">
                     {React.createElement(item.images, { size: 30 })}
                   </div>
@@ -76,7 +88,7 @@ function Services() {
           <div className="row ">
             {ServiceData4.map((item: any) => (
               <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
-                <div className="servicedetails">
+                <div onClick={()=>handleViewDetail(item)} style={{cursor:'pointer'}} className="servicedetails">
                   <div className="iconBox">
                     {React.createElement(item.images, { size: 30 })}
                   </div>
@@ -90,8 +102,8 @@ function Services() {
         {language === "hindi" && (
           <div className="row ">
             {ServiceData2.map((item: any) => (
-              <div data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
-                <div className="servicedetails">
+              <div  data-aos="zoom-in" className="col-lg-3 col-md-4 col-sm-6">
+                <div onClick={()=>handleViewDetail(item)} style={{cursor:'pointer'}} className="servicedetails">
                   <div className="iconBox">
                     {React.createElement(item.images, { size: 30 })}
                   </div>
@@ -103,6 +115,25 @@ function Services() {
           </div>
         )}
       </div>
+      {serviceDetail && 
+        <div  className={`modal fade ${isDetailModal ? 'show d-flex justify-content-center align-items-center' : ''}`} tabIndex={-1} style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      <div className="modal-dialog d-flex justify-content-center align-items-center">
+        <div className="modal-content     ">
+          <div className="modal-header">
+            <h5 className="modal-title fs-3">{serviceDetail?.title}</h5>
+            <button type="button" className="btn-close" onClick={closeModal} aria-label="Close"></button>
+          </div>
+          <div className="modal-body d-flex flex-column gap-3" style={{height:'auto', overflowY:'auto' }}>
+            <h2 className="fs-5">{serviceDetail?.subTitle} </h2>
+            <p className="">
+              {serviceDetail?.completeDescription}
+              </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+      }
     </div>
   );
 }

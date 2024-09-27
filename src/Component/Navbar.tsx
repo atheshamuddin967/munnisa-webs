@@ -72,10 +72,10 @@ function Navbar() {
                 </li>
                 <li className="nav-item">
                   {/* <Link className="nav-link" to="/Home"> */}
-                    <a className="nav-link" href="#contact">
-                      Create a Booking
-                    </a>
-                    {/* </Link> */}
+                  <a className="nav-link" href="#contact">
+                    Create a Booking
+                  </a>
+                  {/* </Link> */}
                 </li>
               </ul>
             )}
@@ -83,7 +83,7 @@ function Navbar() {
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li className="nav-item">
                   <Link
-                    className={`nav-link ${isActive("/Home") ? "active" : ""}`}
+                    className={`nav-link ${isActive("/Home")  ? "  active" : ""}`}
                     to="/Home"
                   >
                     হোম
